@@ -1,9 +1,8 @@
 package org.example;
 
-import java.util.List;
-
-public sealed interface AnimalDAO permits AnimalDAOBanco {
+// Alteramos o 'permits' para autorizar o seu novo arquivo AnimalDAOImpl
+public sealed interface AnimalDAO permits AnimalDAOImpl {
     void salvar(AnimalDTO animal);
-    List<AnimalDTO> listarTodos();
+    java.util.List<AnimalDTO> listarTodos();
     void excluir(int id);
 }

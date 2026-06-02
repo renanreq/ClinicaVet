@@ -3,7 +3,9 @@ package org.example;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public abstract class AnimalDAOImpl implements AnimalDAO {
+// É AQUI: A linha antiga 'public abstract class...' é substituída por esta:
+public abstract non-sealed class AnimalDAOImpl implements AnimalDAO {
+
     protected final String URL = "jdbc:postgresql://wyfynafzsaixnboqpcqr.supabase.co:6543/postgres";
     protected final String USER = "postgres.wyfynafzsaixnboqpcqr";
     protected final String PASSWORD = "POOGrupo7Fatec";

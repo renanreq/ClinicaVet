@@ -3,8 +3,9 @@ package org.example;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public abstract class TutorDAOImpl implements TutorDAO {
-    // URL Universal, Usuário correto e Senha do grupo
+// Substitui a linha antiga por esta com o 'non-sealed':
+public abstract non-sealed class TutorDAOImpl implements TutorDAO {
+
     protected final String URL = "jdbc:postgresql://wyfynafzsaixnboqpcqr.supabase.co:6543/postgres";
     protected final String USER = "postgres.wyfynafzsaixnboqpcqr";
     protected final String PASSWORD = "POOGrupo7Fatec";

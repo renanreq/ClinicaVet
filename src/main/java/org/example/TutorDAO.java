@@ -1,9 +1,8 @@
 package org.example;
 
-import java.util.List;
-
-public sealed interface TutorDAO permits TutorDAOBanco {
+// Alteramos o 'permits' para autorizar o seu novo arquivo TutorDAOImpl
+public sealed interface TutorDAO permits TutorDAOImpl {
     void salvar(TutorDTO tutor);
-    List<TutorDTO> listarTodos();
+    java.util.List<TutorDTO> listarTodos();
     void excluir(int id);
 }

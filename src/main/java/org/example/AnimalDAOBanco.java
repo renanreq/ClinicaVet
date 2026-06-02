@@ -18,7 +18,8 @@ public final class AnimalDAOBanco extends AnimalDAOImpl {
             stmt.executeUpdate();
             System.out.println("[BANCO] Animal gravado na nuvem!");
         } catch (Exception e) {
-            System.out.println("[ERRO BANCO] " + e.getMessage());
+            e.printStackTrace();
+
         }
     }
 
