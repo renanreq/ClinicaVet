@@ -1,23 +1,12 @@
 package org.example;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class TutorDAOBanco implements TutorDAO {
-    private final String URL = "jdbc:postgresql://aws-1-us-east-2.pooler.supabase.com:6543/postgres";
-    private final String USER = "postgres.wyfynafzsaixnboqpcqr";
-    private final String PASSWORD = "POOGrupo7Fatec";
-
-    private Connection conectar() throws Exception {
-        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-
-        System.out.println("[SUCESSO] Conexão estabelecida com o Supabase!");
-        return conn;
-    }
+public final class TutorDAOBanco extends TutorDAOImpl {
 
     @Override
     public void salvar(TutorDTO tutor) {
