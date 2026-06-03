@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-// Importante: implementa a Interface direto, não estende o Impl!
+
 public final class TutorDAOBanco implements TutorDAO {
 
     private final String URL =

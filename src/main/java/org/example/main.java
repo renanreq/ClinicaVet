@@ -5,13 +5,11 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        // FORÇA O JAVA A USAR IPV4 (Adicione esta linha exatamente aqui!)
 
         // Configuração dos teus DAOs (testa com o Banco)
         TutorDAO servicoTutores = new TutorDAOBanco();
         AnimalDAO servicoAnimais = new AnimalDAOBanco();
 
-        // O resto do teu menu continua igual abaixo...
         Scanner teclado = new Scanner(System.in);
         int opcao = 0;
 

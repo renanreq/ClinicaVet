@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-// Implementa a Interface direto, permitindo que a Main decida entre o Banco ou o Impl (Memória)
 public final class AnimalDAOBanco implements AnimalDAO {
 
     private final String URL =
@@ -19,7 +18,7 @@ public final class AnimalDAOBanco implements AnimalDAO {
     private final String PASSWORD =
             "POOGrupo7Fatec";
 
-    // Método privado responsável por abrir a conexão com a nuvem
+
     private Connection conectar() throws Exception {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }

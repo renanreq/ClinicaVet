@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public final class AnimalDAOImpl implements AnimalDAO {
-    // Simulador de banco em memória
     private List<AnimalDTO> bancoDeDados = new ArrayList<>();
 
     @Override

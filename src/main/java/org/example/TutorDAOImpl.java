@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public final class TutorDAOImpl implements TutorDAO {
-    // Simulador de banco em memória (Não usa o Supabase aqui!)
     private List<TutorDTO> bancoDeDados = new ArrayList<>();
 
     @Override
