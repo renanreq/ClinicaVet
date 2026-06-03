@@ -1,18 +1,26 @@
 package org.example;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.util.List;
+import java.util.ArrayList;
 
-// Substitui a linha antiga por esta com o 'non-sealed':
-public abstract non-sealed class TutorDAOImpl implements TutorDAO {
+public final class TutorDAOImpl implements TutorDAO {
+    // Simulador de banco em memória (Não usa o Supabase aqui!)
+    private List<TutorDTO> bancoDeDados = new ArrayList<>();
 
-    protected final String URL = "jdbc:postgresql://wyfynafzsaixnboqpcqr.supabase.co:6543/postgres";
-    protected final String USER = "postgres.wyfynafzsaixnboqpcqr";
-    protected final String PASSWORD = "POOGrupo7Fatec";
+    @Override
+    public void salvar(TutorDTO tutor) {
+        bancoDeDados.add(tutor);
+        System.out.println("Tutor salvo com sucesso na memória: " + tutor.nome());
+    }
 
-    protected Connection conectar() throws Exception {
-        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        System.out.println("[SUCESSO] Conexão estabelecida com o Supabase via Impl!");
-        return conn;
+    @Override
+    public List<TutorDTO> listarTodos() {
+        return new ArrayList<>(bancoDeDados);
+    }
+
+    @Override
+    public void excluir(int id) {
+        bancoDeDados.removeIf(tutor -> tutor.id() == id);
+        System.out.println("Tutor removido com sucesso da memória!");
     }
 }

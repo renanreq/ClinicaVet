@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        // Força o Java a ativar a extensão de rede necessária para o Supabase reconhecer seu projeto
-        System.setProperty("jsse.enableSNIExtension", "true");
+        // FORÇA O JAVA A USAR IPV4 (Adicione esta linha exatamente aqui!)
 
-        // Polimorfismo baseado na interface do professor
+        // Configuração dos teus DAOs (testa com o Banco)
         TutorDAO servicoTutores = new TutorDAOBanco();
         AnimalDAO servicoAnimais = new AnimalDAOBanco();
 
+        // O resto do teu menu continua igual abaixo...
         Scanner teclado = new Scanner(System.in);
         int opcao = 0;
 

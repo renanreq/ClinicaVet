@@ -1,18 +1,26 @@
 package org.example;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.util.List;
+import java.util.ArrayList;
 
-// É AQUI: A linha antiga 'public abstract class...' é substituída por esta:
-public abstract non-sealed class AnimalDAOImpl implements AnimalDAO {
+public final class AnimalDAOImpl implements AnimalDAO {
+    // Simulador de banco em memória
+    private List<AnimalDTO> bancoDeDados = new ArrayList<>();
 
-    protected final String URL = "jdbc:postgresql://wyfynafzsaixnboqpcqr.supabase.co:6543/postgres";
-    protected final String USER = "postgres.wyfynafzsaixnboqpcqr";
-    protected final String PASSWORD = "POOGrupo7Fatec";
+    @Override
+    public void salvar(AnimalDTO animal) {
+        bancoDeDados.add(animal);
+        System.out.println("Animal salvo com sucesso na memória: " + animal.nome());
+    }
 
-    protected Connection conectar() throws Exception {
-        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        System.out.println("[SUCESSO] Conexão estabelecida com o Supabase via Impl!");
-        return conn;
+    @Override
+    public List<AnimalDTO> listarTodos() {
+        return new ArrayList<>(bancoDeDados);
+    }
+
+    @Override
+    public void excluir(int id) {
+        bancoDeDados.removeIf(animal -> animal.id() == id);
+        System.out.println("Animal removido com sucesso da memória!");
     }
 }
